@@ -3,6 +3,10 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    navigate('/profile')
+  };
   return (
     <div className="p-3">
       <h1 className="text-xl font-bold mt-3">
@@ -13,7 +17,7 @@ const Login = () => {
       <p className="text-xs font-semibold mt-1 text-gray-400 w-3/4">
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </p>
-      <form onSubmit={() => navigate("/profile")}>
+      <form onSubmit={handleOnSubmit}>
         <div className="relative mt-5">
           <label
             className="text-xs absolute top-0 left-2 bg-slate-50 pr-3 pl-1 text-[#A67EFD] font-semibold"

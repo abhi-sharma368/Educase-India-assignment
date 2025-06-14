@@ -3,6 +3,10 @@ import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const navigate = useNavigate();
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    navigate("/login");
+  };
   return (
     <div className="p-3">
       <h1 className="text-xl font-bold mt-3">
@@ -10,7 +14,7 @@ const SignUp = () => {
         <br />
         PopX account
       </h1>
-      <form onSubmit={() => navigate("/login")}>
+      <form onSubmit={handleOnSubmit}>
         <div className="relative mt-4">
           <label
             className="text-xs absolute top-0 left-2 bg-slate-50 pr-3 pl-1 text-[#A67EFD] font-semibold"
